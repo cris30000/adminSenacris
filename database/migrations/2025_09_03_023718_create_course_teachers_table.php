@@ -13,6 +13,20 @@ return new class extends Migration
     {
         Schema::create('course_teachers', function (Blueprint $table) {
             $table->id();
+
+            //atributos foraneos
+
+            //atributos foraneos
+            $table->unsignedBigInteger('course_id')->nullable();
+            $table->unsignedBigInteger('teacher_id')->nullable();
+            //referenciado las tablas 
+            $table->foreign('course_id')
+            ->references('id')
+            ->on('curses')->onDelete('cascade');
+            // referenciando la tabla  training centers
+            $table->foreign('teacher_id')
+            ->references('id')
+            ->on('teachers')->onDelete('cascade');
             $table->timestamps();
         });
     }

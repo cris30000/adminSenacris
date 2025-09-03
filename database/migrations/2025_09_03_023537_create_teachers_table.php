@@ -13,10 +13,24 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
+
+            //atributos foraneos
+            $table->unsignedBigInteger('area_id')->nullable();
+            $table->unsignedBigInteger('training_centers_id')->nullable();
+            //referenciado las tablas 
+            $table->foreign('area_id')
+            ->references('id')
+            ->on('areas')->onDelete('set null');
+            // referenciando la tabla  training centers
+            $table->foreign('training_centers_id')
+            ->references('id')
+            ->on('training_centers')->onDelete('set null');
+
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
