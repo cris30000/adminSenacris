@@ -8,6 +8,7 @@ use App\Http\Controllers\CursesController;
 use App\Http\Controllers\ApprenticesController;
 use App\Http\Controllers\ComputersController;   
 use App\Http\Controllers\CourseTeacherontroller;
+use App\Http\Controllers\OrmController;
 
 
 
@@ -16,6 +17,8 @@ use App\Http\Controllers\CourseTeacherontroller;
 Route::get('/', function () {
     return view('welcome');
 });
+
+route::get('consultaOrm',[OrmController::class,'consulta']);
 
 Route::get('teachers',[TeacherController::class,'index'])->name('teacher.index');
 Route::get('teacher/create',[TeacherController::class,'create'])->name('teacher.create');
