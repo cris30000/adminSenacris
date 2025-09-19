@@ -19,7 +19,11 @@
         <label for="title" >Ingrese el email: </label>
         <input type="text" id="title" name="email" required>
 
-       
+       <label for="title" >Ingrese el id del area: </label>
+        <input type="text" id="title" name="area_id" required>
+
+        <label for="title" >Ingrese el id del trainig: </label>
+        <input type="text" id="title" name="trainin_centers_id" required>
 
     <br><br>
 
